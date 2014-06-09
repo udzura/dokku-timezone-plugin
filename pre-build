@@ -4,7 +4,7 @@ APP="$1"; IMAGE="dokku/$APP"; HOSTNAME=$(hostname -f);
 
 echo "-----> Setting up timezone"
 TIMEZONE=$( cat /etc/timezone )
-id=$(docker run -d -v $CACHE_DIR:/cache $IMAGE /bin/bash -c "ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime")
+id=$(docker run -d $IMAGE /bin/bash -c "ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime")
 test $(docker wait $id) -eq 0
 docker commit $id $IMAGE > /dev/null
 echo "-----> Timezone is set to $TIMEZONE"
