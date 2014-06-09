@@ -28,6 +28,16 @@ remote: HEAD is now at 5e23906... To deploy
 ...
 ```
 
+## Setting
+
+This plugin detects timezone via `/etc/timezone` by default.
+
+If you want to customize default timezone, please set `${DOKKU_ROOT:=/home/dokku}/dokkurc` below:
+
+```
+export TIMEZONE=Asia/Tokyo
+```
+
 ## Note
 
 This plugin requires `/etc/timezone` file. So may work well onlly on Ubuntu/Debian.
