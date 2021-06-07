@@ -1,3 +1,7 @@
+This plugin is too old and not maintained anymore. I'm afraid it's better to use `config:set` and env vars.
+
+----
+
 dokku-timezone-plugin
 =====================
 
